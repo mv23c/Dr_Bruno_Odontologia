@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Bruno | Odontologia em Caxias-MA</title>
+    <meta name="description" content="Consultório odontológico do Dr. Bruno em Caxias, Maranhão. Tratamentos modernos, clareamento, implantes e clínica geral. Agende sua consulta.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dental-blue': '#007cc3',
+                        'dental-light': '#e0f2fe',
+                        'dental-dark': '#0e3a5e',
+                    },
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .hero-bg {
+            background-image: linear-gradient(rgba(14, 58, 94, 0.7), rgba(14, 58, 94, 0.7)), url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-700 bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <!-- Logo Placeholder -->
+                    <a href="#" class="flex items-center gap-2">
+                        <i class="fa-solid fa-tooth text-3xl text-dental-blue"></i>
+                        <div class="flex flex-col">
+                            <span class="font-heading font-bold text-xl text-dental-dark leading-none">DR. BRUNO</span>
+                            <span class="text-xs text-gray-500 tracking-widest">ODONTOLOGIA</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="text-gray-600 hover:text-dental-blue font-medium transition">Início</a>
+                    <a href="#sobre" class="text-gray-600 hover:text-dental-blue font-medium transition">Sobre o Dr.</a>
+                    <a href="#tratamentos" class="text-gray-600 hover:text-dental-blue font-medium transition">Tratamentos</a>
+                    <a href="#contato" class="bg-dental-blue text-white px-6 py-2 rounded-full font-medium hover:bg-dental-dark transition shadow-lg hover:shadow-xl">
+                        Agendar Consulta
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMenu()" class="text-gray-600 hover:text-dental-blue focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <a href="#inicio" class="block py-3 px-4 text-gray-600 hover:bg-gray-50">Início</a>
+            <a href="#sobre" class="block py-3 px-4 text-gray-600 hover:bg-gray-50">Sobre o Dr.</a>
+            <a href="#tratamentos" class="block py-3 px-4 text-gray-600 hover:bg-gray-50">Tratamentos</a>
+            <a href="#contato" class="block py-3 px-4 text-dental-blue font-bold hover:bg-gray-50">Agendar Agora</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-bg h-screen flex items-center relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-16">
+            <div class="md:w-2/3 lg:w-1/2 text-white">
+                <div class="inline-block bg-dental-blue bg-opacity-90 px-4 py-1 rounded-full text-sm font-semibold mb-4 tracking-wide animate-pulse">
+                    ATENDIMENTO EM CAXIAS - MA
+                </div>
+                <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                    Seu melhor sorriso começa aqui.
+                </h1>
+                <p class="text-lg md:text-xl mb-8 text-gray-100 leading-relaxed">
+                    Cuidado odontológico humanizado, tecnologia moderna e um ambiente preparado para o seu conforto e da sua família.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://wa.me/5599999999999?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Bruno." target="_blank" class="bg-dental-blue text-white px-8 py-4 rounded-full font-bold text-center hover:bg-white hover:text-dental-blue transition duration-300 shadow-lg flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Agendar pelo WhatsApp
+                    </a>
+                    <a href="#sobre" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-center hover:bg-white hover:text-dental-dark transition duration-300">
+                        Conheça o Dr. Bruno
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights / Benefits -->
+    <section class="py-10 bg-white relative z-10 -mt-16 mx-4 md:mx-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-8 rounded-xl shadow-xl border-b-4 border-dental-blue transform hover:-translate-y-1 transition duration-300">
+                    <div class="w-14 h-14 bg-dental-light rounded-full flex items-center justify-center text-dental-blue mb-4">
+                        <i class="fa-solid fa-user-doctor text-2xl"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl mb-2 text-dental-dark">Profissionalismo</h3>
+                    <p class="text-gray-600 text-sm">Atendimento realizado por profissional qualificado e dedicado à saúde bucal.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-xl border-b-4 border-dental-blue transform hover:-translate-y-1 transition duration-300">
+                    <div class="w-14 h-14 bg-dental-light rounded-full flex items-center justify-center text-dental-blue mb-4">
+                        <i class="fa-solid fa-pump-medical text-2xl"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl mb-2 text-dental-dark">Biossegurança</h3>
+                    <p class="text-gray-600 text-sm">Rigorosos protocolos de esterilização e higiene para sua total segurança.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-xl border-b-4 border-dental-blue transform hover:-translate-y-1 transition duration-300">
+                    <div class="w-14 h-14 bg-dental-light rounded-full flex items-center justify-center text-dental-blue mb-4">
+                        <i class="fa-regular fa-calendar-check text-2xl"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl mb-2 text-dental-dark">Agilidade</h3>
+                    <p class="text-gray-600 text-sm">Horários flexíveis e facilidade de agendamento direto pelo celular.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 relative">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-dental-blue opacity-20 rounded-full"></div>
+                    <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-dental-dark opacity-10 rounded-full"></div>
+                    <!-- Placeholder for Doctor's Image -->
+                    <img src="foto-dr-bruno.jpg" 
+                      alt="Dr. Bruno Dentista" 
+                      class="relative rounded-2xl shadow-2xl w-full object-cover h-[500px] z-10">
+                </div>
+                <div class="lg:w-1/2">
+                    <h4 class="text-dental-blue font-bold uppercase tracking-wider text-sm mb-2">Sobre o Profissional</h4>
+                    <h2 class="font-heading text-3xl md:text-4xl font-bold text-dental-dark mb-6">Dr. Bruno</h2>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Formado em Odontologia com paixão por devolver a autoestima e a saúde aos pacientes. O Dr. Bruno acredita em um atendimento humanizado, onde cada paciente é tratado de forma única, com atenção aos detalhes e conforto.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed mb-8">
+                        Instalado em Caxias - MA, o consultório conta com infraestrutura moderna para realizar desde procedimentos preventivos até tratamentos estéticos e restauradores. O objetivo não é apenas tratar dentes, mas cuidar de pessoas.
+                    </p>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-gray-700">
+                            <i class="fa-solid fa-check text-dental-blue mr-3"></i> Graduado em Odontologia
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fa-solid fa-check text-dental-blue mr-3"></i> Atualizado com técnicas modernas
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fa-solid fa-check text-dental-blue mr-3"></i> Atendimento personalizado
+                        </li>
+                    </ul>
+
+                    <a href="#contato" class="inline-block bg-dental-dark text-white px-8 py-3 rounded-lg hover:bg-dental-blue transition duration-300 font-semibold">
+                        Agendar Avaliação
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="tratamentos" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-dental-dark mb-4">Nossos Tratamentos</h2>
+                <p class="text-gray-600">Soluções completas para manter a sua saúde bucal em dia.</p>
+                <div class="w-20 h-1 bg-dental-blue mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="p-6 border border-gray-100 rounded-xl hover:shadow-lg transition duration-300 bg-gray-50 hover:bg-white group">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-dental-blue shadow-sm mb-4 group-hover:bg-dental-blue group-hover:text-white transition">
+                        <i class="fa-solid fa-tooth text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">Clínica Geral</h3>
+                    <p class="text-gray-600 text-sm">Restaurações, extrações simples e cuidados essenciais para manter seus dentes saudáveis.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="p-6 border border-gray-100 rounded-xl hover:shadow-lg transition duration-300 bg-gray-50 hover:bg-white group">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-dental-blue shadow-sm mb-4 group-hover:bg-dental-blue group-hover:text-white transition">
+                        <i class="fa-solid fa-sparkles text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">Clareamento</h3>
+                    <p class="text-gray-600 text-sm">Técnicas modernas de clareamento dental para um sorriso mais branco e brilhante.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="p-6 border border-gray-100 rounded-xl hover:shadow-lg transition duration-300 bg-gray-50 hover:bg-white group">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-dental-blue shadow-sm mb-4 group-hover:bg-dental-blue group-hover:text-white transition">
+                        <i class="fa-solid fa-shield-virus text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">Limpeza (Profilaxia)</h3>
+                    <p class="text-gray-600 text-sm">Remoção de tártaro e placa bacteriana, prevenindo cáries e doenças gengivais.</p>
+                </div>
+
+                 <!-- Service 4 -->
+                 <div class="p-6 border border-gray-100 rounded-xl hover:shadow-lg transition duration-300 bg-gray-50 hover:bg-white group">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-dental-blue shadow-sm mb-4 group-hover:bg-dental-blue group-hover:text-white transition">
+                        <i class="fa-solid fa-root-variable text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">Endodontia</h3>
+                    <p class="text-gray-600 text-sm">Tratamento de canal realizado com cuidado para aliviar dores e salvar o dente.</p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="p-6 border border-gray-100 rounded-xl hover:shadow-lg transition duration-300 bg-gray-50 hover:bg-white group">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-dental-blue shadow-sm mb-4 group-hover:bg-dental-blue group-hover:text-white transition">
+                        <i class="fa-solid fa-child-reaching text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">Odontopediatria</h3>
+                    <p class="text-gray-600 text-sm">Cuidado especial para as crianças, criando uma experiência positiva desde cedo.</p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="p-6 border border-gray-100 rounded-xl hover:shadow-lg transition duration-300 bg-gray-50 hover:bg-white group">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-dental-blue shadow-sm mb-4 group-hover:bg-dental-blue group-hover:text-white transition">
+                        <i class="fa-solid fa-wand-magic-sparkles text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">Estética Dental</h3>
+                    <p class="text-gray-600 text-sm">Facetas e procedimentos para harmonizar o sorriso e aumentar a autoestima.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Appointment Section -->
+    <section class="py-20 bg-dental-blue text-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10">
+            <i class="fa-solid fa-tooth text-[300px] absolute -right-20 -bottom-20 rotate-12"></i>
+        </div>
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h2 class="font-heading text-3xl md:text-5xl font-bold mb-6">Pronto para transformar seu sorriso?</h2>
+            <p class="text-xl mb-10 text-blue-100">Agende sua avaliação agora mesmo. Estamos prontos para receber você em Caxias.</p>
+            <a href="https://wa.me/5599999999999?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" class="bg-white text-dental-blue px-10 py-4 rounded-full font-bold text-lg hover:bg-dental-dark hover:text-white transition shadow-lg inline-flex items-center gap-3">
+                <i class="fa-brands fa-whatsapp text-2xl"></i> Agendar via WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Location & Contact -->
+    <section id="contato" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="font-heading text-2xl font-bold text-dental-dark mb-6">Informações de Contato</h3>
+                    <p class="text-gray-600 mb-8">Fácil acesso e atendimento com hora marcada. Entre em contato para tirar dúvidas ou marcar sua visita.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-dental-blue shadow-sm shrink-0 mr-4">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Localização</h4>
+                                <p class="text-gray-600">Rua Principal, 123, Centro<br>Caxias - MA, 65600-000</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-dental-blue shadow-sm shrink-0 mr-4">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Telefone / WhatsApp</h4>
+                                <p class="text-gray-600">(99) 99999-9999</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-dental-blue shadow-sm shrink-0 mr-4">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Horário de Atendimento</h4>
+                                <p class="text-gray-600">Segunda a Sexta: 08h às 18h<br>Sábado: 08h às 12h</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Map Placeholder (Iframes work here) -->
+                <div class="bg-white p-2 rounded-xl shadow-lg h-80 md:h-auto relative overflow-hidden">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.624501675234!2d-43.366666!3d-4.866667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x78e5a2c0e73d05f%3A0x4d5b0b6c6b8f0f0!2sCaxias%2C%20MA!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy"
+                        class="rounded-lg w-full h-full object-cover">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dental-dark text-white py-10 border-t border-blue-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0 text-center md:text-left">
+                <h2 class="text-2xl font-heading font-bold">DR. BRUNO</h2>
+                <p class="text-sm text-blue-200 mt-1">Odontologia em Caxias - MA</p>
+            </div>
+            <div class="flex space-x-6 mb-4 md:mb-0">
+                <a href="#" class="text-blue-200 hover:text-white transition"><i class="fa-brands fa-instagram text-2xl"></i></a>
+                <a href="#" class="text-blue-200 hover:text-white transition"><i class="fa-brands fa-facebook text-2xl"></i></a>
+            </div>
+            <div class="text-sm text-blue-300 text-center md:text-right">
+                &copy; 2023 Dr. Bruno Odontologia.<br>Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5599999999999?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta." class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white/95', 'backdrop-blur-sm');
+            } else {
+                navbar.classList.remove('bg-white/95', 'backdrop-blur-sm');
+            }
+        });
+    </script>
+</body>
+</html>
